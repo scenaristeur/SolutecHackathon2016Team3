@@ -14,7 +14,7 @@ public class PlayerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (canMove) {
+		if (canMove == true) {
 			float mouveHorizontal = Input.GetAxis ("Horizontal");
 			float mouveVertical = Input.GetAxis ("Vertical");
 
