@@ -20,15 +20,6 @@ public class PlayerScript : MonoBehaviour {
 	void Update () {
 		float mouveHorizontal = 0;
 		float mouveVertical = 0;
-
-        if (mouveHorizontal<0)
-        {
-            direction = -1;
-        }
-        if (mouveHorizontal > 0)
-        {
-            direction = 1;
-        }
 			
         if (Input.GetKeyDown("a"))
         {
@@ -56,6 +47,12 @@ public class PlayerScript : MonoBehaviour {
 			Vector2 mouvment = new Vector2 (mouveHorizontal * speed, mouveVertical);
 			GetComponent<Rigidbody2D> ().AddForce (mouvment);
         }
+
+		if (mouveHorizontal<=0)
+			direction = -1;
+		else if (mouveHorizontal > 0)
+			direction = 1;
+		
         if (mouveHorizontal != 0)
         {
             if(direction == 1)
