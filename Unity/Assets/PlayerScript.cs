@@ -16,6 +16,17 @@ public class PlayerScript : MonoBehaviour {
 	void Update () {
         float mouveHorizontal = 0;
         float mouveVertical = 0;
+        canMove = true;
+        if (Input.GetKeyDown("t"))
+        {
+            animBob.SetBool("hack", true);
+            canMove = false;
+        }
+        else if(Input.GetKeyUp("t"))
+        {
+            canMove = true;
+            animBob.SetBool("hack", false);
+        }
         if (canMove == true) {
 			mouveHorizontal = Input.GetAxis ("Horizontal");
             mouveVertical = Input.GetAxis ("Vertical");
@@ -31,6 +42,7 @@ public class PlayerScript : MonoBehaviour {
         {
             animBob.SetBool("walk", false);
         }
+        
 	}
 
 	void OnCollisionEnter()
