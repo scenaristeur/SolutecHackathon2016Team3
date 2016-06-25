@@ -1,0 +1,129 @@
+{
+  "head": {
+    "vars": [ "s" , "p" , "o" ]
+  } ,
+  "results": {
+    "bindings": [
+      {
+        "s": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" } ,
+        "o": { "type": "uri" , "value": "http://www.w3.org/2002/07/owl#Ontology" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/2002/07/owl#versionIRI" } ,
+        "o": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC/1.0.0" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#soumisA" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" } ,
+        "o": { "type": "uri" , "value": "http://www.w3.org/2002/07/owl#ObjectProperty" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#age" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" } ,
+        "o": { "type": "uri" , "value": "http://www.w3.org/2002/07/owl#DatatypeProperty" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#valeur" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" } ,
+        "o": { "type": "uri" , "value": "http://www.w3.org/2002/07/owl#DatatypeProperty" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#Caillou" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" } ,
+        "o": { "type": "uri" , "value": "http://www.w3.org/2002/07/owl#Class" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#Contrainte" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" } ,
+        "o": { "type": "uri" , "value": "http://www.w3.org/2002/07/owl#Class" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#Personnage" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" } ,
+        "o": { "type": "uri" , "value": "http://www.w3.org/2002/07/owl#Class" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#Bob" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" } ,
+        "o": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#Personnage" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#Bob" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" } ,
+        "o": { "type": "uri" , "value": "http://www.w3.org/2002/07/owl#NamedIndividual" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#Bob" } ,
+        "p": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#soumisA" } ,
+        "o": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#Gravite" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#Bob" } ,
+        "p": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#age" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "15" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#Gravite" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" } ,
+        "o": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#Contrainte" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#Gravite" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" } ,
+        "o": { "type": "uri" , "value": "http://www.w3.org/2002/07/owl#NamedIndividual" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#Gravite" } ,
+        "p": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#valeur" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "value": "10" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#Caillou12" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" } ,
+        "o": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#Caillou" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#Caillou12" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" } ,
+        "o": { "type": "uri" , "value": "http://www.w3.org/2002/07/owl#NamedIndividual" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#Caillou12" } ,
+        "p": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#soumisA" } ,
+        "o": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#Gravite" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#Caillou18" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" } ,
+        "o": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#Caillou" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#Caillou18" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" } ,
+        "o": { "type": "uri" , "value": "http://www.w3.org/2002/07/owl#NamedIndividual" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#Caillou18" } ,
+        "p": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#soumisA" } ,
+        "o": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#Gravite" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#Caillou637" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" } ,
+        "o": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#Caillou" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#Caillou637" } ,
+        "p": { "type": "uri" , "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" } ,
+        "o": { "type": "uri" , "value": "http://www.w3.org/2002/07/owl#NamedIndividual" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#Caillou637" } ,
+        "p": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#soumisA" } ,
+        "o": { "type": "uri" , "value": "http://www.smag0/NS/hackathonSolutec/DC#Gravite" }
+      }
+    ]
+  }
+}
