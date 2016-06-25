@@ -38,7 +38,12 @@ public class PlayerScript : MonoBehaviour {
 
         if (canMove == true)
         {
-			if(GetComponent<Collider2D>().IsTouching(GameObject.Find("Collision").GetComponent<Collider2D>()) && Input.GetKeyDown("space"))
+			//we check if we are touching a support to know if we are abble to jump
+			bool canJump = false;
+			foreach (GameObject go in GameObject.FindGameObjectsWithTag("Support"))
+				if (GetComponent<Collider2D> ().IsTouching (go.GetComponent<Collider2D> ()) && transform.position.y <= go.GetComponent<Collider2D> ().transform.position.y)
+					canJump = true;
+			if(Input.GetKeyDown("space") && canJump)
 				mouveVertical = jumpPower;
 
 			if(GetComponent<Rigidbody2D>().velocity.x <= maxSpeed && GetComponent<Rigidbody2D>().velocity.x >= -maxSpeed)
