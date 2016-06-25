@@ -31,9 +31,13 @@ public class BoxManager : MonoBehaviour {
 	}
 
 	void refreshData(){
+		string tailleCaillou = "";
 		try{
-			this.transform.localScale = new Vector2(int.Parse(database.getValue ("box_1_1","height")) ,int.Parse(database.getValue ("box_1_1","width")));
+			tailleCaillou = database.getValue ("Caillou12","taille");
+			this.transform.localScale = new Vector2(int.Parse(tailleCaillou) ,int.Parse(tailleCaillou));
 		}catch(System.FormatException ignored){
+			Debug.Log (ignored.Message);
+			Debug.Log (tailleCaillou);
 		}
 	}
 }
