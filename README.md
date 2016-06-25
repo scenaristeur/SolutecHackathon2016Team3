@@ -13,7 +13,8 @@ just change /run/shino.ini :
 just change  : 
 "#/$/** = localhostFilter" by "/$/** = anon" in /run/shino.ini to allow update from localNetwork
 
-then upload data from this file : https://github.com/DRaineri/SolutecHackathon2016Team3/blob/master/ontologie/hackathonSolutec.owl
+create a dataset named "test"
+then upload data to this dataset  from this file : https://github.com/DRaineri/SolutecHackathon2016Team3/blob/master/ontologie/hackathonSolutec.owl
 >>>>>>> af5c1ab6c04bb3395bc4e52eb966b5013f1184aa
 
 
