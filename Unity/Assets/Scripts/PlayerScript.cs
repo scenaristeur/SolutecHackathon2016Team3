@@ -39,7 +39,7 @@ public class PlayerScript : MonoBehaviour {
 
         if (canMove == true)
         {
-			if(GetComponent<Collider2D>().IsTouching(GameObject.Find("Ground").GetComponent<Collider2D>()) && Input.GetKeyDown("space"))
+			if(/*GetComponent<Collider2D>().IsTouching(GameObject.Find("Ground").GetComponent<Collider2D>()) &&*/ Input.GetKeyDown("space"))
 				mouveVertical = jumpPower;
 
 			if(GetComponent<Rigidbody2D>().velocity.x <= maxSpeed && GetComponent<Rigidbody2D>().velocity.x >= -maxSpeed)
