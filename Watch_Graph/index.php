@@ -4,6 +4,14 @@
 <title>Watch_Graph</title>
 <meta name="description" content="A badass visualisation of the graph data of our badass videogame" />
 <meta charset="UTF-8">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <script src="lib/go.js"></script>
 <script id="code">
   function init() {
@@ -43,7 +51,7 @@
         $(go.Shape, "RoundedRectangle",
           {
             parameter1: 20,  // the corner has a large radius
-            fill: $(go.Brush, "Linear", { 0: "rgb(254, 201, 0)", 1: "rgb(254, 162, 0)" }),
+            fill: $(go.Brush, "Linear", { 0: "rgb(66,133,244)", 1: "rgb(66,133,244)" }),
             stroke: null,
             portId: "",  // this Shape is the Node's port, not the whole Node
             fromLinkable: true, fromLinkableSelfNode: true, fromLinkableDuplicates: true,
@@ -52,7 +60,7 @@
           }),
         $(go.TextBlock,
           {
-            font: "bold 11pt helvetica, bold arial, sans-serif",
+            font: "normal 12pt impact, bold arial, sans-serif",
             editable: true  // editing the text automatically updates the model data
           },
           new go.Binding("text").makeTwoWay())
@@ -138,7 +146,7 @@
             {
               textAlign: "center",
               font: "9pt helvetica, arial, sans-serif",
-              margin: 4,
+              margin: 0,
               editable: true  // enable in-place editing
             },
             // editing the text automatically updates the model data
