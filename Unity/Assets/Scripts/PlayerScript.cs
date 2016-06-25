@@ -18,10 +18,18 @@ public class PlayerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float mouveHorizontal = 0;
-        float mouveVertical = 0;
-        
-        canMove = true;
+		float mouveHorizontal = 0;
+		float mouveVertical = 0;
+
+        if (mouveHorizontal<0)
+        {
+            direction = -1;
+        }
+        if (mouveHorizontal > 0)
+        {
+            direction = 1;
+        }
+			
         if (Input.GetKeyDown("a"))
         {
             if(direction == 1)
@@ -39,7 +47,7 @@ public class PlayerScript : MonoBehaviour {
 
         if (canMove == true)
         {
-			if(/*GetComponent<Collider2D>().IsTouching(GameObject.Find("Ground").GetComponent<Collider2D>()) &&*/ Input.GetKeyDown("space"))
+			if(GetComponent<Collider2D>().IsTouching(GameObject.Find("Collision").GetComponent<Collider2D>()) && Input.GetKeyDown("space"))
 				mouveVertical = jumpPower;
 
 			if(GetComponent<Rigidbody2D>().velocity.x <= maxSpeed && GetComponent<Rigidbody2D>().velocity.x >= -maxSpeed)
