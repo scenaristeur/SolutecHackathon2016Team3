@@ -3,33 +3,32 @@ using System.Collections;
 
 public class PlayerScript : MonoBehaviour {
 
-	public int speed = 50;
-	public int jumpPower = 50;
-	public bool canMove = true;
+	public int speed = 5;
+	public int jumpPower = 300000;
+	public int maxSpeed = 5;
+	bool jumping;
 
 	// Use this for initialization
 	void Start () {
-	
+		jumping = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (canMove == true) {
-			float mouveHorizontal = Input.GetAxis ("Horizontal");
-			float mouveVertical = Input.GetAxis ("Vertical");
-
-			Vector2 mouvment = new Vector2 (mouveHorizontal * speed, mouveVertical * jumpPower);
-			GetComponent<Rigidbody2D> ().AddForce (mouvment);
+		float mouveHorizontal = 0;
+		float mouveVertical = 0;
+		if (!jumping) {
+			mouveVertical = 1;
+			jumping = true;
 		}
-	}
 
-	void OnCollisionEnter()
-	{
-		canMove = true;
-	}
+		if(GetComponent<Collider2D>().IsTouching(GameObject.Find("Ground").GetComponent<Collider2D>()) && Input.GetKeyDown("space"))
+			mouveVertical = jumpPower;
+		
+		if(GetComponent<Rigidbody2D>().velocity.x <= maxSpeed && GetComponent<Rigidbody2D>().velocity.x >= -maxSpeed)
+			mouveHorizontal = Input.GetAxis ("Horizontal");
 
-	void OnCollisionExit()
-	{
-		canMove = false;
+		Vector2 mouvment = new Vector2 (mouveHorizontal * speed, mouveVertical*6);
+		GetComponent<Rigidbody2D>().AddForce (mouvment);
 	}
 }
