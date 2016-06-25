@@ -14,20 +14,29 @@ public class PlayerScript : MonoBehaviour {
 	void Start () {
         animBob = GetComponent<Animator>();
         //Application.OpenURL("http://192.168.101.39:3030");
+        direction = 1;
     }
 	
 	// Update is called once per frame
 	void Update () {
 		float mouveHorizontal = 0;
 		float mouveVertical = 0;
-			
+        mouveHorizontal = Input.GetAxis("Horizontal");
+
+        if (mouveHorizontal < 0)
+            direction = -1;
+        else if (mouveHorizontal > 0)
+            direction = 1;
+        //Debug.Log(direction);
         if (Input.GetKeyDown("a"))
         {
+            
             if(direction == 1)
                 animBob.SetBool("hack", true);
-            else
+            else if(direction == -1)
                 animBob.SetBool("hackl", true);
             canMove = false;
+            
         }
         else if (Input.GetKeyDown("e"))
         {
@@ -53,10 +62,7 @@ public class PlayerScript : MonoBehaviour {
 			GetComponent<Rigidbody2D> ().AddForce (mouvment);
         }
 
-		if (mouveHorizontal<=0)
-			direction = -1;
-		else if (mouveHorizontal > 0)
-			direction = 1;
+		
 		
         if (mouveHorizontal != 0)
         {
