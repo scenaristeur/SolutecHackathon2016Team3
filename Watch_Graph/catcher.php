@@ -43,6 +43,7 @@ while( $row = sparql_fetch_array( $result ) )
 }
 //print "</table>";
 
+
 $json = "{ \"nodeKeyProperty\": \"id\", \"nodeDataArray\": [{ \"id\": 0, \"text\": \"".$subject."\" }";
 $i = 1;
 foreach($nodes as $node) {
