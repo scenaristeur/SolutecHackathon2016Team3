@@ -24,7 +24,6 @@ public class PlayerScript : MonoBehaviour {
         if (mouveHorizontal<0)
         {
             direction = -1;
-            Debug.Log(direction);
         }
         if (mouveHorizontal > 0)
         {
