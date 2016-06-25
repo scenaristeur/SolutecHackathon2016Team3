@@ -1,0 +1,121 @@
+fileFormatVersion: 2
+guid: d537eeb9eab08e7409368a7f2dc58539
+timeCreated: 1466867958
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: 20160625_124152_0
+    21300002: 20160625_124152_1
+    21300004: 20160625_124152_2
+    21300006: 20160625_124152_3
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: 20160625_124152_0
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 523
+        width: 409
+        height: 535
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -204.5, y: 267.5}
+        - {x: -204.5, y: -267.5}
+        - {x: 204.5, y: -267.5}
+        - {x: 204.5, y: 267.5}
+    - name: 20160625_124152_1
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 521
+        width: 320
+        height: 881
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -160, y: 440.5}
+        - {x: -160, y: -440.5}
+        - {x: 160, y: -440.5}
+        - {x: 160, y: 440.5}
+    - name: 20160625_124152_2
+      rect:
+        serializedVersion: 2
+        x: 1385
+        y: 513
+        width: 340
+        height: 884
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -170, y: 442}
+        - {x: -170, y: -442}
+        - {x: 170, y: -442}
+        - {x: 170, y: 442}
+    - name: 20160625_124152_3
+      rect:
+        serializedVersion: 2
+        x: 1784
+        y: 531
+        width: 207
+        height: 863
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -103.5, y: 431.5}
+        - {x: -103.5, y: -431.5}
+        - {x: 103.5, y: -431.5}
+        - {x: 103.5, y: 431.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
