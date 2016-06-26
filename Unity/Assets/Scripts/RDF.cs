@@ -30,13 +30,11 @@ public class RDF {
 		string responseFromServer = reader.ReadToEnd ();
 		// Display the content.
 		//Debug.Log (responseFromServer);
-		Debug.Log ("R"+responseFromServer);
 
         //Parse the JSON to read the data.
 		var N = JSON.Parse(responseFromServer);
 
 		string res = N["results"]["bindings"][0]["objet"]["value"].Value;
-		Debug.Log ("D0"+res);
 		// Clean up the streams and the response.
 		reader.Close ();
 		response.Close ();
@@ -45,10 +43,8 @@ public class RDF {
         Regex re = new Regex(@".*#(.*)|(.*)");
         MatchCollection mc = re.Matches(res);
         res = mc[0].Groups[1].Value;
-		Debug.Log ("D1"+res);
         if(res == "")
             res = mc[0].Groups[0].Value;
-		Debug.Log ("D2"+res);
         return res;
 	}
 }

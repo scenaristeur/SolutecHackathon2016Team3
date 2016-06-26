@@ -33,6 +33,8 @@ public class BoxManager : MonoBehaviour {
 
 		if (Input.GetKeyDown ("e") && isActionable)
 			refreshData ();
+		if (Input.GetKeyDown ("a") && isActionable)
+			new HackBehavior (this.gameObject.name); 
 
 	}
 
@@ -45,5 +47,8 @@ public class BoxManager : MonoBehaviour {
 			Debug.Log (ignored.Message);
 			Debug.Log (tailleBoite);
 		}
+	}
+
+	void openBrowser(){
 	}
 }

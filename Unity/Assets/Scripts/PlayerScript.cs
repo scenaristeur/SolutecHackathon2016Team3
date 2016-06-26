@@ -21,11 +21,11 @@ public class PlayerScript : MonoBehaviour {
 	void Update () {
 		float mouveHorizontal = 0;
 		float mouveVertical = 0;
-        mouveHorizontal = Input.GetAxis("Horizontal");
+        float dirAxeHorizon = Input.GetAxis("Horizontal");
 
-        if (mouveHorizontal < 0)
+		if (dirAxeHorizon < 0)
             direction = -1;
-        else if (mouveHorizontal > 0)
+		else if (dirAxeHorizon > 0)
             direction = 1;
         //Debug.Log(direction);
         if (Input.GetKeyDown("a"))
@@ -47,7 +47,7 @@ public class PlayerScript : MonoBehaviour {
 
         if (canMove == true)
         {
-			//we check if we are touching a support to know if we are abble to jump
+			//we check if we are touching a support to know if we are abble to jump from the top of it
 			bool canJump = false;
 			foreach (GameObject go in GameObject.FindGameObjectsWithTag("Support"))
 				if (GetComponent<Collider2D> ().IsTouching (go.GetComponent<Collider2D> ()) && transform.position.y <= go.GetComponent<Collider2D> ().transform.position.y)
