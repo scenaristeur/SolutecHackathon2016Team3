@@ -1,18 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HackBehavior : StateMachineBehaviour {
+public class HackBehavior : MonoBehaviour {
     float startTime = -1;
-	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+    public string ressource;
+	void start()
+    {
         startTime = Time.time;
     }
 
-    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+    void getRessource(string r)
+    {
+        ressource = r;
+    }
+
+    void update() {
         if(startTime> 0 && Time.time > startTime + 0.2)
         {
-            Application.OpenURL("http://192.168.101.38/solutechackathon2016team3/Watch_graph/?object=Caillou12");
+            Application.OpenURL("http://192.168.101.38/solutechackathon2016team3/Watch_graph/?object="+ressource);
             startTime = -1;
         }
         
