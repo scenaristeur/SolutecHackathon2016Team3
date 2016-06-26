@@ -7,12 +7,12 @@ Projet DreamHacker
 
 ## Dream Team
 
-Bastien GUYL, Team leader (and Unity dev)
-Jonathan PLATTEAU, Full Stack Badass Dev
-Adrien ROMANET, Also Badass Dev, bier manager
-Gaetan ROCHE, Useless... And Unity dev
-Clement BLAISE, Unity dev and Designer
-David, RDF data model Master
+* Bastien GUYL, Team leader (and Unity dev)
+* Jonathan PLATTEAU, Full Stack Badass Dev
+* Adrien ROMANET, Also Badass Dev, bier manager
+* Gaetan ROCHE, Useless... And Unity dev
+* Clement BLAISE, Unity dev and Designer
+* David, RDF data model Master
 
 ### Database
 Fuseki Server : http://jena.apache.org/documentation/fuseki2/
