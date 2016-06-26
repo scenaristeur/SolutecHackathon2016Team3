@@ -30,11 +30,15 @@ public class PlayerScript : MonoBehaviour {
         //Debug.Log(direction);
         if (Input.GetKeyDown("a"))
         {
-            
-            if(direction == 1)
-                animBob.SetBool("hack", true);
-            else if(direction == -1)
-                animBob.SetBool("hackl", true);
+            animBob.SetBool("hack", true);
+            if (direction == 1)
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
+            else
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
             canMove = false;
             
         }
@@ -42,7 +46,6 @@ public class PlayerScript : MonoBehaviour {
         {
             canMove = true;
             animBob.SetBool("hack", false);
-            animBob.SetBool("hackl", false);
         }
 
         if (canMove == true)
@@ -66,15 +69,20 @@ public class PlayerScript : MonoBehaviour {
 		
         if (mouveHorizontal != 0)
         {
-            if(direction == 1)
-                animBob.SetBool("walk", true);
+            animBob.SetBool("walk", true);
+            if (direction == 1)
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+            } 
             else
-                animBob.SetBool("walkl", true);
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
+                
         }
         else
         {
             animBob.SetBool("walk", false);
-            animBob.SetBool("walkl", false);
         }
     }
 }

@@ -33,9 +33,9 @@ public class BoxManager : MonoBehaviour {
 
 		if (Input.GetKeyDown ("e") && isActionable)
 			refreshData ();
-		if (Input.GetKeyDown ("a") && isActionable)
-			new HackBehavior (this.gameObject.name); 
-
+		if (Input.GetKeyDown ("a") && isActionable) {
+			OpenBrowser openBrowser = new OpenBrowser (this.gameObject.name);
+		}
 	}
 
 	void refreshData(){
