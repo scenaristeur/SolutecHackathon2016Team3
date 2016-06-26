@@ -9,11 +9,8 @@ public class BoxManager : ObjectManager {
 	private bool isMovable;
 	private bool hasYellowKey;
 
-	private int gravite;
-
 	// Use this for initialization
 	void Start () {
-		int tailleBoite = 0;
 		database = new RDF ();
 		refreshData ();
 	}
@@ -44,7 +41,6 @@ public class BoxManager : ObjectManager {
 		try{
 			tailleBoite = int.Parse(database.getValue (this.gameObject.name,"taille"));
 			this.transform.localScale = new Vector2(tailleBoite ,tailleBoite);
-			this.gravite = int.Parse(database.getValue (this.gameObject.name, "gravite"));
 			this.distActivable = tailleBoite + 2;
 			this.isMovable = bool.Parse(database.getValue(this.gameObject.name, "deplacable"));
 			GetComponent<Rigidbody2D>().isKinematic = !this.isMovable;
@@ -52,5 +48,4 @@ public class BoxManager : ObjectManager {
 			Debug.Log (ignored.Message);
 		}
 	}
-
 }
