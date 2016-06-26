@@ -12,10 +12,24 @@ Projet DreamHacker
 * Adrien ROMANET, Also Badass Dev, bier manager
 * Gaetan ROCHE, Useless... And Unity dev
 * Clement BLAISE, Unity dev and Designer
-* David, RDF data model Master
+* David FAVERIS, RDF data model Master
 
-### Database
-Fuseki Server : http://jena.apache.org/documentation/fuseki2/
+
+
+### Pourquoi utiliser l'artillerie du Web Sémantique et du [RDF](https://fr.wikipedia.org/wiki/Resource_Description_Framework) pour stocker la taille des box et caillous ?
+
+- pour l'ouverture des données :  interconnexion avec d'autres bases de connaissance ([DBPedia](http://fr.dbpedia.org/page/Lyon), [RDFINSEE](http://rdf.insee.fr/)...)
+- pour l'interopérabilité (RDF= xml amélioré !)
+- pour [l'inférence](http://www-igm.univ-mlv.fr/~dr/XPOSE2009/Le%20Web%203.0/concepts.html#inference) (déduction d'informations qui ne sont pas explicitement décrites ) --> données prêtes pour le Machine Learning ou une IA
+- simplicité pour l'utilisateur qui gère l'info sous forme de triplet (mais complexité pour le dév !)
+- pas de schéma prédéfini, scalable... --> on y gagne en agilité !
+
+
+[plus d'infos sur le RDF](http://www.yoyodesign.org/doc/w3c/rdf-mt/)
+
+
+### Installation Database
+Fuseki Server : http://jena.apache.org/documentation/fuseki2/ ou http://smag0.blogspot.fr/p/blog-page_14.html
 
 just change /run/shino.ini : 
 and the rest are restricted to localhost.
