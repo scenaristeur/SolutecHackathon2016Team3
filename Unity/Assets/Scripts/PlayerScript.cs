@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour {
 
@@ -9,8 +10,16 @@ public class PlayerScript : MonoBehaviour {
 	bool jumping;
 	public bool canMove = true;
     int direction = 1;
+	bool hasYellowKey = false;
+
     Animator animBob;
     Vector2 spawn;
+
+	float moveHorizontal;
+	float moveVertical;
+
+	public GameObject UIKey;
+
 	// Use this for initialization
 	void Start () {
         animBob = GetComponent<Animator>();
@@ -21,67 +30,62 @@ public class PlayerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float mouveHorizontal = 0;
-		float mouveVertical = 0;
-        float mouveHor = Input.GetAxis("Horizontal");
+		float horizontalAcceleration = 0;
 
-        if (mouveHor < 0)
+		//handle key mapped
+		if (Input.GetKeyDown ("a")) {
+			animBob.SetBool ("hack", true);
+			if (direction == 1)
+				GetComponent<SpriteRenderer> ().flipX = false;
+			else
+				GetComponent<SpriteRenderer> ().flipX = true;
+			canMove = false;
+		} else if (Input.GetKeyDown ("e")) {
+			canMove = true;
+			animBob.SetBool ("hack", false);
+		} else if (Input.GetKeyDown ("r"))
+			transform.position = spawn;
+
+		moveHorizontal = Input.GetAxis ("Horizontal");
+		moveVertical = Input.GetAxis ("Vertical");
+
+		if (moveHorizontal < 0)
             direction = -1;
-        else if (mouveHor > 0)
+		else if (moveHorizontal > 0)
             direction = 1;
-        //Debug.Log(direction);
-        if (Input.GetKeyDown("a"))
-        {
-            animBob.SetBool("hack", true);
-            if (direction == 1)
-            {
-                GetComponent<SpriteRenderer>().flipX = false;
-            }
-            else
-            {
-                GetComponent<SpriteRenderer>().flipX = true;
-            }
-            canMove = false;
-            
-        }
-        else if (Input.GetKeyDown("e"))
-        {
-            canMove = true;
-            animBob.SetBool("hack", false);
-            animBob.SetBool("bro", false);
-        }
-
+       
+		//if the player is not hacking 
         if (canMove == true)
         {
-			//we check if we are touching a support to know if we are abble to jump
+			//we check if we are touching a support to know if we are abble to jump from the top of it
 			bool canJump = false;
-			foreach (GameObject go in GameObject.FindGameObjectsWithTag("Support"))
-				if (GetComponent<Collider2D> ().IsTouching (go.GetComponent<Collider2D> ()) && transform.position.y <= go.GetComponent<Collider2D> ().transform.position.y)
+			foreach (GameObject go in GameObject.FindGameObjectsWithTag("Support")) {
+				if (GetComponent<Collider2D> ().IsTouching (go.GetComponent<Collider2D> ())) {
 					canJump = true;
-			if(Input.GetKeyDown("space") && canJump)
-				mouveVertical = jumpPower;
+				}
+			}
+			if (canJump) {
+				if (Input.GetKeyDown ("space"))//Jump
+					moveVertical = jumpPower;
+				if (moveHorizontal == 0)//Player stopping (can't stop in air)
+					GetComponent<Rigidbody2D>().velocity = new Vector2(0,GetComponent<Rigidbody2D>().velocity.y);
+			}
 
+			//
 			if(GetComponent<Rigidbody2D>().velocity.x <= maxSpeed && GetComponent<Rigidbody2D>().velocity.x >= -maxSpeed)
-				mouveHorizontal = Input.GetAxis ("Horizontal");
+				horizontalAcceleration = moveHorizontal;
 
-			Vector2 mouvment = new Vector2 (mouveHorizontal * speed, mouveVertical);
+			Vector2 mouvment = new Vector2 (horizontalAcceleration * speed, moveVertical);
 			GetComponent<Rigidbody2D> ().AddForce (mouvment);
         }
-
-		
-		
-        if (mouveHorizontal != 0)
+			
+		if (horizontalAcceleration != 0)
         {
             animBob.SetBool("walk", true);
             if (direction == 1)
-            {
                 GetComponent<SpriteRenderer>().flipX = false;
-            } 
             else
-            {
                 GetComponent<SpriteRenderer>().flipX = true;
-            }
-                
         }
         else
         {
@@ -98,6 +102,24 @@ public class PlayerScript : MonoBehaviour {
         if(coll.collider.name == "Finnish")
         {
             //Fin du niveau
+			SceneManager.LoadScene("menu");
         }
+		if (coll.collider.name == "lock_1_1" && hasYellowKey) {
+			if (coll.collider.GetComponent<LockManager> ().color == "jaune") {
+				Object.Destroy (coll.collider.gameObject);
+				this.hasYellowKey = false;
+				UIKey.GetComponent<SpriteRenderer> ().color = new Color (1f, 1f, 1f, 0);
+			}
+		}
     }
+
+	void OnTriggerEnter2D(Collider2D coll){
+		if (coll.GetComponent<Collider2D>().name == "yellowKey") {
+			this.hasYellowKey = true;
+			//show the key in the UI
+			UIKey.GetComponent<SpriteRenderer> ().color = new Color (1f, 1f, 1f, 1);
+			Object.Destroy (coll.gameObject);
+		}
+	}
+
 }
