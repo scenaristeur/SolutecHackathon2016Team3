@@ -23,6 +23,7 @@
     <script src="lib/go.js"></script>
     <script id="code" src="js/graph.js"></script>
     <script src="js/RDF.js"></script>
+    <script> window.object = "<?php print $_GET['object'] ?>";</script>
 </head>
 <body onload="init()">
 <video class="hide-for-small-only" poster="http://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/uploads/20160422160353/neo4j-products-hero-video-poster.jpg" loop="" autoplay="">
@@ -33,6 +34,6 @@
 <div>
     <textarea id="mySavedModel" style="width:0;height:0" hidden="hidden"><?php include 'catcher.php'; ?></textarea>
 </div>
-<iframe style="height:0" hidden="hidden" name="hidden-form"></iframe>
+<<iframe style="height:0" hidden="hidden" name="hidden-form"></iframe>
 </body>
 </html>
