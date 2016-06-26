@@ -38,6 +38,7 @@ function modifTriplet(_sujetAvant,_propAvant,_objetAvant,_sujetApres,_propApres,
     var endpoint="http://192.168.101.39:3030/test/update";
     var updateDeleteComplete="";
     var updateAddComplete="";
+    
     //Initialisation de la variable prefixes avec quelques prefixes
     var prefixes  = "PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n";
     prefixes += "PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#> \n";
@@ -55,11 +56,9 @@ function modifTriplet(_sujetAvant,_propAvant,_objetAvant,_sujetApres,_propApres,
     }
     updateInsert += " } ";
 
-    //        update=prefixes+updateDelete+updateInsert;
+
     updateDeleteComplete=prefixes+updateDelete;
     updateAddComplete=prefixes+updateInsert
-    //console.log(updateDeleteComplete);
-    //console.log(updateAddComplete);
 
     post(endpoint, {"update" : updateAddComplete});
     // impossible de concatener les deux requetes DEL et INS ! GRRRR ! -> delai necessaire entre deux requetes post
