@@ -37,7 +37,7 @@ function init() {
             $(go.Shape, "RoundedRectangle",
                 {
                     parameter1: 20,  // the corner has a large radius
-                    fill: $(go.Brush, "Linear", { 0: "rgb(92,189,170)", 1: "rgb(92,189,170)" }),
+                    fill: $(go.Brush, "Linear", { 0: "rgb(0,0,25)", 1: "rgb(0,0,25)" }),
                     stroke: null,
                     portId: "",  // this Shape is the Node's port, not the whole Node
                     fromLinkable: true, fromLinkableSelfNode: true, fromLinkableDuplicates: true,

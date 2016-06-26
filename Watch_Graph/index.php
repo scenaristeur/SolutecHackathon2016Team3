@@ -13,7 +13,8 @@
     <link rel="icon" type="image/png" href="favicon.png" />
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="stylesheet" href="css/style.css">
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
@@ -22,20 +23,16 @@
     <script src="lib/go.js"></script>
     <script id="code" src="js/graph.js"></script>
     <script src="js/RDF.js"></script>
-    <script type='text/javascript' src='lib/jquery.particleground.js'></script>
-    <script type='text/javascript' src='js/particle.js'></script>
 </head>
 <body onload="init()">
-<div id="particles">
-    <div id="intro">
-        <div id="myDiagramDiv" style="border: 0; width: 100%; height: 600px;"></div>
-        <div>
-    <textarea id="mySavedModel" style="width:0;height:0" hidden="hidden">
-<?php include 'catcher.php'; ?>
-    </textarea>
-        </div>
-        <iframe style="height:0" hidden="hidden" name="hidden-form"></iframe>
-    </div>
+<video class="hide-for-small-only" poster="http://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/uploads/20160422160353/neo4j-products-hero-video-poster.jpg" loop="" autoplay="">
+    <source type="video/mp4" src="//s3.amazonaws.com/media.neo4j.com/neo4j-products-hero-video-10sec.mp4">Your browser doesn't support HTML5 video tag.</source>
+    Your browser doesn't support HTML5 video tag.
+</video>
+<div id="myDiagramDiv"></div>
+<div>
+    <textarea id="mySavedModel" style="width:0;height:0" hidden="hidden"><?php include 'catcher.php'; ?></textarea>
 </div>
+<iframe style="height:0" hidden="hidden" name="hidden-form"></iframe>
 </body>
 </html>
