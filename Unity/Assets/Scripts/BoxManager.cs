@@ -5,7 +5,8 @@ public class BoxManager : MonoBehaviour {
 
 	public Sprite[] sprites;
 	public bool isActionable = false;
-
+    public int level;//Niveau dans lequel se trouve la box
+    public int num;//Numero de la box dans le niveau
 	private RDF database;
 
 	private int gravite;
@@ -33,8 +34,18 @@ public class BoxManager : MonoBehaviour {
 
 		if (Input.GetKeyDown ("e") && isActionable)
 			refreshData ();
+        if (Input.GetKeyDown("a") && isActionable)
+            getData();
+            
 
-	}
+    }
+
+    void getData()
+    {
+        GameObject.Find("Bob").GetComponent<Animator>().SetBool("bro", true);
+        GameObject.Find("Bob").GetComponent<Animator>().SetInteger("num", num);
+        GameObject.Find("Bob").GetComponent<Animator>().SetInteger("lvl", level);
+    }
 
 	void refreshData(){
 		string tailleBoite = "";
