@@ -8,9 +8,15 @@ public class BoxManager : MonoBehaviour {
 
 	private RDF database;
 
+	private int gravite;
+
 	// Use this for initialization
 	void Start () {
+		string tailleBoite = "";
 		database = new RDF ();
+		tailleBoite = database.getValue (this.gameObject.name,"taille");
+		this.transform.localScale = new Vector2(int.Parse(tailleBoite) ,int.Parse(tailleBoite));
+		this.gravite = int.Parse(database.getValue (this.gameObject.name, "gravite"));
 	}
 
 	// Update is called once per frame
@@ -31,9 +37,13 @@ public class BoxManager : MonoBehaviour {
 	}
 
 	void refreshData(){
+		string tailleBoite = "";
 		try{
-			this.transform.localScale = new Vector2(int.Parse(database.getValue ("box_1_1","height")) ,int.Parse(database.getValue ("box_1_1","width")));
+			tailleBoite = database.getValue (this.gameObject.name,"taille");
+			this.transform.localScale = new Vector2(int.Parse(tailleBoite) ,int.Parse(tailleBoite));
 		}catch(System.FormatException ignored){
+			Debug.Log (ignored.Message);
+			Debug.Log (tailleBoite);
 		}
 	}
 }

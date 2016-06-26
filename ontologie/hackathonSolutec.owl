@@ -1,0 +1,346 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY DC "http://www.smag0/NS/hackathonSolutec/DC#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.smag0/NS/hackathonSolutec/DC#"
+     xml:base="http://www.smag0/NS/hackathonSolutec/DC"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:DC="http://www.smag0/NS/hackathonSolutec/DC#">
+    <owl:Ontology rdf:about="http://www.smag0/NS/hackathonSolutec/DC">
+        <owl:versionIRI rdf:resource="http://www.smag0/NS/hackathonSolutec/DC/1.0.0"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#hasObject -->
+
+    <owl:ObjectProperty rdf:about="&DC;hasObject"/>
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#soumisA -->
+
+    <owl:ObjectProperty rdf:about="&DC;soumisA"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#age -->
+
+    <owl:DatatypeProperty rdf:about="&DC;age"/>
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#gravite -->
+
+    <owl:DatatypeProperty rdf:about="&DC;gravite"/>
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#taille -->
+
+    <owl:DatatypeProperty rdf:about="&DC;taille"/>
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#valeur -->
+
+    <owl:DatatypeProperty rdf:about="&DC;valeur"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#Box -->
+
+    <owl:Class rdf:about="&DC;Box"/>
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#Caillou -->
+
+    <owl:Class rdf:about="&DC;Caillou"/>
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#Contrainte -->
+
+    <owl:Class rdf:about="&DC;Contrainte"/>
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#Game -->
+
+    <owl:Class rdf:about="&DC;Game"/>
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#Niveau -->
+
+    <owl:Class rdf:about="&DC;Niveau"/>
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#Personnage -->
+
+    <owl:Class rdf:about="&DC;Personnage"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#Bob -->
+
+    <owl:NamedIndividual rdf:about="&DC;Bob">
+        <rdf:type rdf:resource="&DC;Personnage"/>
+        <age rdf:datatype="&xsd;integer">15</age>
+        <taille rdf:datatype="&xsd;integer">3</taille>
+        <gravite rdf:datatype="&xsd;integer">5</gravite>
+        <soumisA rdf:resource="&DC;Gravite"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#Caillou12 -->
+
+    <owl:NamedIndividual rdf:about="&DC;Caillou12">
+        <rdf:type rdf:resource="&DC;Caillou"/>
+        <soumisA rdf:resource="&DC;Gravite"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#Caillou18 -->
+
+    <owl:NamedIndividual rdf:about="&DC;Caillou18">
+        <rdf:type rdf:resource="&DC;Caillou"/>
+        <soumisA rdf:resource="&DC;Gravite"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#Caillou637 -->
+
+    <owl:NamedIndividual rdf:about="&DC;Caillou637">
+        <rdf:type rdf:resource="&DC;Caillou"/>
+        <soumisA rdf:resource="&DC;Gravite"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#Dreamcatcher -->
+
+    <owl:NamedIndividual rdf:about="&DC;Dreamcatcher">
+        <rdf:type rdf:resource="&DC;Game"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#Gravite -->
+
+    <owl:NamedIndividual rdf:about="&DC;Gravite">
+        <rdf:type rdf:resource="&DC;Contrainte"/>
+        <valeur rdf:datatype="&xsd;integer">10</valeur>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#Niveau1 -->
+
+    <owl:NamedIndividual rdf:about="&DC;Niveau1">
+        <rdf:type rdf:resource="&DC;Niveau"/>
+        <hasObject rdf:resource="&DC;box_1_1"/>
+        <hasObject rdf:resource="&DC;box_1_10"/>
+        <hasObject rdf:resource="&DC;box_1_2"/>
+        <hasObject rdf:resource="&DC;box_1_3"/>
+        <hasObject rdf:resource="&DC;box_1_4"/>
+        <hasObject rdf:resource="&DC;box_1_5"/>
+        <hasObject rdf:resource="&DC;box_1_6"/>
+        <hasObject rdf:resource="&DC;box_1_7"/>
+        <hasObject rdf:resource="&DC;box_1_8"/>
+        <hasObject rdf:resource="&DC;box_1_9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#Niveau2 -->
+
+    <owl:NamedIndividual rdf:about="&DC;Niveau2">
+        <rdf:type rdf:resource="&DC;Niveau"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#box_1_1 -->
+
+    <owl:NamedIndividual rdf:about="&DC;box_1_1">
+        <rdf:type rdf:resource="&DC;Box"/>
+        <taille rdf:datatype="&xsd;integer">10</taille>
+        <gravite rdf:datatype="&xsd;integer">6</gravite>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#box_1_10 -->
+
+    <owl:NamedIndividual rdf:about="&DC;box_1_10">
+        <rdf:type rdf:resource="&DC;Box"/>
+        <taille rdf:datatype="&xsd;integer">1</taille>
+        <taille rdf:datatype="&xsd;integer">2</taille>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#box_1_2 -->
+
+    <owl:NamedIndividual rdf:about="&DC;box_1_2">
+        <rdf:type rdf:resource="&DC;Box"/>
+        <gravite rdf:datatype="&xsd;integer">5</gravite>
+        <taille rdf:datatype="&xsd;integer">5</taille>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#box_1_3 -->
+
+    <owl:NamedIndividual rdf:about="&DC;box_1_3">
+        <rdf:type rdf:resource="&DC;Box"/>
+        <gravite rdf:datatype="&xsd;integer">2</gravite>
+        <taille rdf:datatype="&xsd;integer">3</taille>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#box_1_4 -->
+
+    <owl:NamedIndividual rdf:about="&DC;box_1_4">
+        <rdf:type rdf:resource="&DC;Box"/>
+        <gravite rdf:datatype="&xsd;integer">1</gravite>
+        <taille rdf:datatype="&xsd;integer">3</taille>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#box_1_5 -->
+
+    <owl:NamedIndividual rdf:about="&DC;box_1_5">
+        <rdf:type rdf:resource="&DC;Box"/>
+        <gravite rdf:datatype="&xsd;integer">3</gravite>
+        <taille rdf:datatype="&xsd;integer">4</taille>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#box_1_6 -->
+
+    <owl:NamedIndividual rdf:about="&DC;box_1_6">
+        <rdf:type rdf:resource="&DC;Box"/>
+        <taille rdf:datatype="&xsd;integer">1</taille>
+        <gravite rdf:datatype="&xsd;integer">4</gravite>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#box_1_7 -->
+
+    <owl:NamedIndividual rdf:about="&DC;box_1_7">
+        <rdf:type rdf:resource="&DC;Box"/>
+        <gravite rdf:datatype="&xsd;integer">1</gravite>
+        <taille rdf:datatype="&xsd;integer">2</taille>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#box_1_8 -->
+
+    <owl:NamedIndividual rdf:about="&DC;box_1_8">
+        <rdf:type rdf:resource="&DC;Box"/>
+        <taille rdf:datatype="&xsd;integer">12</taille>
+        <gravite rdf:datatype="&xsd;integer">2</gravite>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#box_1_9 -->
+
+    <owl:NamedIndividual rdf:about="&DC;box_1_9">
+        <rdf:type rdf:resource="&DC;Box"/>
+        <gravite rdf:datatype="&xsd;integer">1</gravite>
+        <taille rdf:datatype="&xsd;integer">3</taille>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#box_2_1 -->
+
+    <owl:NamedIndividual rdf:about="&DC;box_2_1">
+        <rdf:type rdf:resource="&DC;Box"/>
+        <gravite rdf:datatype="&xsd;integer">1</gravite>
+        <taille rdf:datatype="&xsd;integer">2</taille>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.smag0/NS/hackathonSolutec/DC#box_2_2 -->
+
+    <owl:NamedIndividual rdf:about="&DC;box_2_2">
+        <rdf:type rdf:resource="&DC;Box"/>
+        <gravite rdf:datatype="&xsd;integer">1</gravite>
+        <taille rdf:datatype="&xsd;integer">2</taille>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+

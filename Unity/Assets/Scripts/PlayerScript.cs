@@ -14,44 +14,48 @@ public class PlayerScript : MonoBehaviour {
 	void Start () {
         animBob = GetComponent<Animator>();
         //Application.OpenURL("http://192.168.101.39:3030");
+        direction = 1;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        float mouveHorizontal = 0;
-        float mouveVertical = 0;
-
+		float mouveHorizontal = 0;
+		float mouveVertical = 0;
         mouveHorizontal = Input.GetAxis("Horizontal");
-        mouveVertical = Input.GetAxis("Vertical");
-        if (mouveHorizontal<0)
-        {
-            direction = -1;
-        }
-        if (mouveHorizontal > 0)
-        {
-            direction = 1;
-        }
 
-        
-        canMove = true;
+        if (mouveHorizontal < 0)
+            direction = -1;
+        else if (mouveHorizontal > 0)
+            direction = 1;
+        //Debug.Log(direction);
         if (Input.GetKeyDown("a"))
         {
-            if(direction == 1)
-                animBob.SetBool("hack", true);
+            animBob.SetBool("hack", true);
+            if (direction == 1)
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
             else
-                animBob.SetBool("hackl", true);
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
             canMove = false;
+            
         }
         else if (Input.GetKeyDown("e"))
         {
             canMove = true;
             animBob.SetBool("hack", false);
-            animBob.SetBool("hackl", false);
         }
 
         if (canMove == true)
         {
-			if(GetComponent<Collider2D>().IsTouching(GameObject.Find("Ground").GetComponent<Collider2D>()) && Input.GetKeyDown("space"))
+			//we check if we are touching a support to know if we are abble to jump
+			bool canJump = false;
+			foreach (GameObject go in GameObject.FindGameObjectsWithTag("Support"))
+				if (GetComponent<Collider2D> ().IsTouching (go.GetComponent<Collider2D> ()) && transform.position.y <= go.GetComponent<Collider2D> ().transform.position.y)
+					canJump = true;
+			if(Input.GetKeyDown("space") && canJump)
 				mouveVertical = jumpPower;
 
 			if(GetComponent<Rigidbody2D>().velocity.x <= maxSpeed && GetComponent<Rigidbody2D>().velocity.x >= -maxSpeed)
@@ -60,17 +64,25 @@ public class PlayerScript : MonoBehaviour {
 			Vector2 mouvment = new Vector2 (mouveHorizontal * speed, mouveVertical);
 			GetComponent<Rigidbody2D> ().AddForce (mouvment);
         }
+
+		
+		
         if (mouveHorizontal != 0)
         {
-            if(direction == 1)
-                animBob.SetBool("walk", true);
+            animBob.SetBool("walk", true);
+            if (direction == 1)
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+            } 
             else
-                animBob.SetBool("walkl", true);
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
+                
         }
         else
         {
             animBob.SetBool("walk", false);
-            animBob.SetBool("walkl", false);
         }
     }
 }
