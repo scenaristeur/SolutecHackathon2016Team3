@@ -4,28 +4,32 @@ using System.Collections;
 public class PlayerScript : MonoBehaviour {
 
 	public int speed = 20;
-	public int jumpPower = 300;
+	public int jumpPower = 310;
 	public int maxSpeed = 5;
 	bool jumping;
 	public bool canMove = true;
     int direction = 1;
     Animator animBob;
+    Vector2 spawn;
 	// Use this for initialization
 	void Start () {
         animBob = GetComponent<Animator>();
         //Application.OpenURL("http://192.168.101.39:3030");
         direction = 1;
+        spawn = transform.position;
     }
 	
 	// Update is called once per frame
 	void Update () {
 		float mouveHorizontal = 0;
 		float mouveVertical = 0;
-        float dirAxeHorizon = Input.GetAxis("Horizontal");
 
-		if (dirAxeHorizon < 0)
+        float mouveHor = Input.GetAxis("Horizontal");
+
+        if (mouveHor < 0)
             direction = -1;
-		else if (dirAxeHorizon > 0)
+        else if (mouveHor > 0)
+
             direction = 1;
         //Debug.Log(direction);
         if (Input.GetKeyDown("a"))
@@ -46,6 +50,7 @@ public class PlayerScript : MonoBehaviour {
         {
             canMove = true;
             animBob.SetBool("hack", false);
+            animBob.SetBool("bro", false);
         }
 
         if (canMove == true)
@@ -83,6 +88,18 @@ public class PlayerScript : MonoBehaviour {
         else
         {
             animBob.SetBool("walk", false);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if(coll.collider.name == "Lost")
+        {
+            transform.position = spawn;
+        }
+        if(coll.collider.name == "Finnish")
+        {
+            //Fin du niveau
         }
     }
 }

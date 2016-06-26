@@ -5,8 +5,10 @@ public class BoxManager : MonoBehaviour {
 
 	public Sprite[] sprites;
 	public bool isActionable = false;
-
+    public int level;//Niveau dans lequel se trouve la box
+    public int num;//Numero de la box dans le niveau
 	private RDF database;
+	private float startTime; 
 
 	private int gravite;
 
@@ -33,10 +35,22 @@ public class BoxManager : MonoBehaviour {
 
 		if (Input.GetKeyDown ("e") && isActionable)
 			refreshData ();
+		
 		if (Input.GetKeyDown ("a") && isActionable) {
-			OpenBrowser openBrowser = new OpenBrowser (this.gameObject.name);
+			//OpenBrowser openBrowser = new OpenBrowser (this.gameObject.name);
+			//getData();
+			startTime = Time.time;
+			StartCoroutine (OpenBrowser ());
 		}
 	}
+
+    void getData()
+    {
+        GameObject.Find("Bob").GetComponent<Animator>().SetBool("bro", true);
+        GameObject.Find("Bob").GetComponent<Animator>().SetInteger("num", num);
+        GameObject.Find("Bob").GetComponent<Animator>().SetInteger("lvl", level);
+    }
+
 
 	void refreshData(){
 		string tailleBoite = "";
@@ -49,6 +63,11 @@ public class BoxManager : MonoBehaviour {
 		}
 	}
 
-	void openBrowser(){
+	IEnumerator OpenBrowser (){
+		while (Time.time - this.startTime < 200) {
+			yield return null;
+		}
+		Application.OpenURL("http://192.168.101.38/solutechackathon2016team3/Watch_graph/?object=" + this.gameObject.name);
+		yield return new WaitForSeconds (3f);
 	}
 }
