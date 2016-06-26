@@ -1,3 +1,6 @@
+/*
+    This function is used to post data
+ */
 function post(path, params, method) {
     method = method || "post";
     var form = document.createElement("form");
@@ -19,6 +22,9 @@ function post(path, params, method) {
     form.submit();
 }
 
+/*
+    This function is used to update an object
+ */
 function modifTriplet(_sujetAvant,_propAvant,_objetAvant,_sujetApres,_propApres,_objetApres,_objetType){
 
     var sujetAvant=_sujetAvant;

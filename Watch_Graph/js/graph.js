@@ -112,9 +112,8 @@ function init() {
         var oldValue = e.parameter;
         var newValue = e.subject.text;
         var type = e.subject.part.findTreeParentLink().toString().split('(')[1].replace(')', '');
-        var object = "<?php print $_GET['object'] ?>";
-
-        modifTriplet(object, type, oldValue, object, type, newValue, "literal");
+        
+        modifTriplet(window.object, type, oldValue, window.object, type, newValue, "literal");
     });
 
     // replace the default Link template in the linkTemplateMap

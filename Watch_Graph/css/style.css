@@ -12,6 +12,6 @@ html, body {
     text-align: center;
 }
 
-.hide-for-small-only {
+.max {
     width: 100%;
 }
