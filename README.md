@@ -1,6 +1,8 @@
 # SolutecHackathon2016Team3
 Repository pour l'équipe 3 du hackathon organisé par l'entreprise Solutec
 
+trello : https://trello.com/invite/dreamcatcher9/0d7ac0913489ede4d2d289832ef12151
+
 https://draineri.github.io/SolutecHackathon2016Team3/
 
 Projet DreamHacker
