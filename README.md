@@ -14,6 +14,12 @@ Projet DreamHacker
 * Clement BLAISE, Unity dev and Designer
 * David FAVERIS, RDF data model Master
 
+## Installation de l'environnement pour contribuer
+- installer Unity 3D, 
+- gitcloner ce repository
+- installer un serveur Fuseki RDF pour la base
+- installer un serveur PHP pour la partie WatchHack
+- ...
 
 
 ### Pourquoi utiliser l'artillerie du Web Sémantique et du [RDF](https://fr.wikipedia.org/wiki/Resource_Description_Framework) pour stocker la taille des box et caillous ?
